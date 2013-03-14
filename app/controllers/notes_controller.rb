@@ -42,9 +42,9 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(params[:note])
 
-    respond_to do |format|
+    respond_to do |format|s_path
       if @note.save
-        format.html { redirect_to @note, notice: 'Note was successfully created.' }
+        format.html { redirect_to notes_path, notice: 'Note was successfully created.' }
         format.json { render json: @note, status: :created, location: @note }
       else
         format.html { render action: "new" }

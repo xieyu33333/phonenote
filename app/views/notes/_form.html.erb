@@ -10,13 +10,17 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
-    <%= f.label :phone %><br />
+    <%= f.label :姓名 %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :手机 %><br />
     <%= f.number_field :phone %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :邮箱 %><br />
     <%= f.text_field :email %>
   </div>
   <div class="field">
@@ -28,15 +32,11 @@
     <%= f.text_field :skype %>
   </div>
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :job %><br />
+    <%= f.label :职务 %><br />
     <%= f.text_field :job %>
   </div>
   <div class="field">
-    <%= f.label :tel %><br />
+    <%= f.label :分机号 %><br />
     <%= f.number_field :tel %>
   </div>
   <div class="actions">

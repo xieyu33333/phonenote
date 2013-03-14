@@ -7,6 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+          <div class="container_24">
+            <a class="brand" href="index.html">卓衡科技内部交流薄</a>
+            <ul class="nav">
+              <li><%= link_to '通讯录', notes_path %></li>
+              <li><%= link_to 'BLog', blogs_path %></li>
+              <li><%= link_to '公告', blogs_path %></li>
+            </ul>
+            <a class="login_index" href="index.html">登陆</a>
+        </div>
+      </div>
+    </div>
 
 <%= yield %>
 

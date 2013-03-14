@@ -1,14 +1,15 @@
-<h1>Listing notes</h1>
-
-<table>
+<div class="container_24">
+    <h3 class="page-header">通讯录</h3>
+<%= link_to '创建新成员', new_note_path , :class=>'btn btn-primary goright' %>
+<table class="table tabletop">
   <tr>
-    <th>Phone</th>
-    <th>Email</th>
-    <th>Qq</th>
+    <th>姓名</th>
+    <th>手机</th>
+    <th>邮箱</th>
+    <th>QQ</th>
     <th>Skype</th>
-    <th>Name</th>
-    <th>Job</th>
-    <th>Tel</th>
+    <th>职务</th>
+    <th>分机号</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,11 +17,11 @@
 
 <% @notes.each do |note| %>
   <tr>
+    <td><%= note.name %></td>
     <td><%= note.phone %></td>
     <td><%= note.email %></td>
     <td><%= note.qq %></td>
     <td><%= note.skype %></td>
-    <td><%= note.name %></td>
     <td><%= note.job %></td>
     <td><%= note.tel %></td>
     <td><%= link_to 'Show', note %></td>
@@ -32,4 +33,4 @@
 
 <br />
 
-<%= link_to 'New Note', new_note_path %>
+
