@@ -1,20 +1,18 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
-
+<h3><%= @blog.title %></h3>
 <p>
-  <b>User:</b>
-  <%= @blog.user_id %>
+  <b>作者:</b>
+  <%= @blog.user.name %>
 </p>
-
 <p>
-  <b>Title:</b>
-  <%= @blog.title %>
-</p>
-
-<p>
-  <b>Content:</b>
   <%= @blog.content %>
+</p>
+<p>
+    <%= @blog.created_at %>
 </p>
 
 
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
+</div>

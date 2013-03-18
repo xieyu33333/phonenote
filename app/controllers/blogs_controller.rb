@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  include SessionsHelper
   # GET /blogs
   # GET /blogs.json
   def index
@@ -41,6 +42,7 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(params[:blog])
+    @blog.user_id = current_user.id
 
     respond_to do |format|
       if @blog.save
