@@ -1,3 +1,4 @@
+# coding: utf-8
 class SessionsController < ApplicationController
   include SessionsHelper
   
@@ -5,10 +6,11 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       sign_in user
+      flash[:success] = '登陆成功'
       redirect_to notes_path
     else
-      flash[:error] = 'Invalid email/password combination'
-      redirect_to notes_path, notice: 'Note was successfully created.' 
+      flash[:error] = '账号或密码错误'
+      redirect_to notes_path
     end
   end
   

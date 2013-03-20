@@ -23,6 +23,18 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-rails'
   gem 'awesome_print'
+  gem 'guard-rspec'
+  gem 'spork'
+  gem 'guard-spork'
+  gem 'annotate'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'growl' if /darwin/ =~ RUBY_PLATFORM
+  gem 'rb-fsevent' , :require => false
+  gem 'libnotify' if /linux/ =~ RUBY_PLATFORM
+  gem 'rb-inotify' if /linux/ =~ RUBY_PLATFORM
 end
 
 gem 'jquery-rails'
