@@ -5,7 +5,7 @@ set -e
 
 # Feel free to change any of the following variables for your app:
 TIMEOUT=${TIMEOUT-60}
-APP_ROOT=/home/work/phonenote/
+APP_ROOT=/home/xieyu/phonenote/
 PID=$APP_ROOT/tmp/pids/unicorn.pid
 CMD="bundle exec unicorn_rails -c config/unicorn.rb -E production -D"
 INIT_CONF=$APP_ROOT/config/init.conf
