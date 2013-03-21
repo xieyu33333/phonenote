@@ -35,7 +35,7 @@ stdout_path "#{Rails.root}/log/unicorn.log"
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
-listen "/home/xieyu/phonenote/tmp/unicorn.woshare.sock", :backlog => 64
+listen "/home/xieyu/phonenote/tmp/unicorn.phonenote.sock", :backlog => 64
 listen 8080, :tcp_nopush => true
 
 # nuke workers after 30 seconds instead of 60 seconds (the default)
