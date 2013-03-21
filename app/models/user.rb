@@ -11,9 +11,8 @@
 #  updated_at      :datetime         not null
 #  remember_token  :string(255)
 #
-
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation, :usertype
+  attr_accessible :email, :name, :password, :password_confirmation, :usertype , :admin
   has_secure_password
   validates :name , presence: true, length:{ maximum:40 }
   validates :email , presence: true

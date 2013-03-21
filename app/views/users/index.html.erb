@@ -1,10 +1,12 @@
-<h1>Listing users</h1>
+<div class="container">
+<h3>用户列表</h3>
 
 <table>
   <tr>
     <th>Type</th>
     <th>Name</th>
-    <th>Email</th>
+    <th>Admin</th>
+    <th>Email</th> 
     <th>Password digest</th>
     <th>Remember_token</th>
     <th></th>
@@ -16,6 +18,7 @@
   <tr>
     <td><%= user.usertype %></td>
     <td><%= user.name %></td>
+    <td><%= user.admin %></td>
     <td><%= user.email %></td>
     <td><%= user.password_digest %></td>
     <td><%= user.remember_token %></td>
@@ -28,4 +31,5 @@
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to '创建新用户', new_user_path , :class=> "btn btn-primary" %>
+</div>

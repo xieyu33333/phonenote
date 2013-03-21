@@ -10,6 +10,10 @@
       </ul>
     </div>
   <% end %>
+  
+  <% if current_user && current_user.admin == true %>
+   <%= f.radio_button :admin, true %> 提升为管理员
+  <% end %>
 
   <div class="field">
     <%= f.label :用户名 %><br />
@@ -28,6 +32,6 @@
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions">
-    <input type="submit" value="提交"/>
+     <input type="submit" value="提 交" class="btn btn-primary">
   </div>
 <% end %>

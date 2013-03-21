@@ -1,4 +1,9 @@
+# coding: utf-8
 class UsersController < ApplicationController
+  before_filter :signed_in_user, only: [:edit , :update] 
+  before_filter :current_user, only: [:edit , :update] 
+  before_filter :admin_user, only: :destroy 
+    include SessionsHelper
   # GET /users
   # GET /users.json
   def index
@@ -44,7 +49,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        sign_in @user
+        flash[:success] = "注册成功，欢迎来到卓衡科技"
+        format.html { redirect_to @user }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }

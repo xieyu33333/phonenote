@@ -13,7 +13,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
+# before_filter :admin_user, only: [:destroy , :edit, :update] 
 class Note < ActiveRecord::Base
   attr_accessible :email, :job, :name, :phone, :qq, :skype, :tel
 end

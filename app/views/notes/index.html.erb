@@ -1,6 +1,8 @@
 <div class="container_24">
     <h3 class="page-header">通讯录</h3>
-<%= link_to '创建新成员', new_note_path , :class=>'btn btn-primary goright' %>
+    <% if current_user && current_user.admin == true %>
+    <%= link_to '创建新成员', new_note_path , :class=>'btn btn-primary goright' %>
+    <% end%>
 <table class="table tabletop">
   <tr>
     <th>姓名</th>
@@ -10,9 +12,11 @@
     <th>Skype</th>
     <th>职务</th>
     <th>分机号</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <% if current_user && current_user.admin == true %>
+        <th></th>
+        <th></th>
+        <th></th>
+    <% end%>
   </tr>
 
 <% @notes.each do |note| %>
@@ -24,9 +28,11 @@
     <td><%= note.skype %></td>
     <td><%= note.job %></td>
     <td><%= note.tel %></td>
-    <td><%= link_to 'Show', note %></td>
-    <td><%= link_to 'Edit', edit_note_path(note) %></td>
-    <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% if current_user && current_user.admin == true %>
+        <td><%= link_to 'Show', note %></td>
+        <td><%= link_to 'Edit', edit_note_path(note) %></td>
+        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end%>
   </tr>
 <% end %>
 </table>

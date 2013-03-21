@@ -1,4 +1,7 @@
 class BlogsController < ApplicationController
+  before_filter :signed_in_user, only: [:create , :edit , :update , :new] 
+  before_filter :current_user, only: [:edit , :update] 
+  before_filter :admin_user, only: :destroy 
   include SessionsHelper
   # GET /blogs
   # GET /blogs.json

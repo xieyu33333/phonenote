@@ -1,0 +1,10 @@
+<div class="container">
+    <%= form_for(:session , url: sessions_path) do |f|%>
+        <pre>
+            邮  箱：<input name="session[email]" type="email"/>
+            密  码：<input name="session[password]" type="password"/>
+        </pre>
+        <input type="submit" value="登 陆" class="btn btn-primary">
+    <% end %>
+    
+</div>

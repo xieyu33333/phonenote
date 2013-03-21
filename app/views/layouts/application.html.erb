@@ -10,11 +10,14 @@
     <div class="navbar">
       <div class="navbar-inner">
           <div class="container_24">
-            <a class="brand" href="http://www.smapp.hk/">卓衡科技内部交流薄</a>
+              <%= link_to '卓衡科技内部交流薄', "/" , :class=> "brand" %>
             <ul class="nav">
               <li><%= link_to '通讯录', notes_path %></li>
               <li><%= link_to 'BLog', blogs_path %></li>
-              <li><%= link_to '公告', blogs_path %></li>
+              <li><%= link_to '公告', "/homes/announcement" %></li>
+              <% if current_user && current_user.admin == true %>
+              <li><%= link_to '用户', users_path %></li>
+              <% end %>
             </ul>
             <div class="useradmin">
                 <% if signed_in? %>

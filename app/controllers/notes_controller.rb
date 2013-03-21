@@ -1,4 +1,7 @@
 class NotesController < ApplicationController
+  before_filter :signed_in_user, only: [:edit , :update] 
+  before_filter :current_user, only: [:edit , :update] 
+  before_filter :admin_user, only: :destroy 
   # GET /notes
   # GET /notes.json
   def index
@@ -42,7 +45,7 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(params[:note])
 
-    respond_to do |format|s_path
+    respond_to do |format|
       if @note.save
         format.html { redirect_to notes_path, notice: 'Note was successfully created.' }
         format.json { render json: @note, status: :created, location: @note }
