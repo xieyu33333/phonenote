@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :正文 %><br />
-    <%= f.kindeditor :content , :class=>"blog_content" , :allowFileManager => false %>
+    <%= f.kindeditor :content , :class=>"blog_content" , :allowFileManager => false , :editor_id => 'my_editor' %>
   </div>
   <div class="actions">
     <input type="submit" value="发布博文" class="btn btn-primary">

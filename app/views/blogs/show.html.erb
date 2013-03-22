@@ -6,11 +6,8 @@
   <%= @blog.user.name %>
 </p>
 <div id="blogcontent">
+    <%= @blog.content.html_safe() %>
 </div>
-<script>
-var content=document.getElementById("blogcontent")
- content.innerHTML = <%= @blog.content %>
- </script>
 </p>
 <p>
     <%= @blog.created_at %>
