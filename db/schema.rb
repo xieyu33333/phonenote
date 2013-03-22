@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130321070544) do
+ActiveRecord::Schema.define(:version => 20130322035830) do
 
   create_table "blogs", :force => true do |t|
     t.integer  "user_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20130321070544) do
   end
 
   create_table "notes", :force => true do |t|
-    t.integer  "phone"
+    t.string   "phone"
     t.string   "email"
     t.integer  "qq"
     t.string   "skype"
