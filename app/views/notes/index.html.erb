@@ -15,7 +15,6 @@
     <% if current_user && current_user.admin == true %>
         <th></th>
         <th></th>
-        <th></th>
     <% end%>
   </tr>
 
@@ -29,9 +28,8 @@
     <td><%= note.job %></td>
     <td><%= note.tel %></td>
     <% if current_user && current_user.admin == true %>
-        <td><%= link_to 'Show', note %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '编辑', edit_note_path(note) %></td>
+        <td><%= link_to '删除', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end%>
   </tr>
 <% end %>
