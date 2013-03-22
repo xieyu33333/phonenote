@@ -5,14 +5,18 @@
   <b>作者:</b>
   <%= @blog.user.name %>
 </p>
-<p>
-  <%= @blog.content %>
+<div id="blogcontent">
+</div>
+<script>
+var content=document.getElementById("blogcontent")
+ content.innerHTML = <%= @blog.content %>
+ </script>
 </p>
 <p>
     <%= @blog.created_at %>
 </p>
 
 
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+<%= link_to '编 辑', edit_blog_path(@blog) %> |
+<%= link_to '返 回', blogs_path %>
 </div>
