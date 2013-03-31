@@ -16,6 +16,7 @@
   <% end %>
 
   <div class="field">
+    <%= gravatar_for @user %>
     <%= f.label :用户名 %><br />
     <%= f.text_field :name %>
   </div>
