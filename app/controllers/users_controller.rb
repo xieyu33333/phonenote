@@ -49,6 +49,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        Avatar.create(:avatar => params[:avatar] , :avatar_for => @user)
         sign_in @user
         flash[:success] = "注册成功，欢迎来到卓衡科技"
         format.html { redirect_to @user }
@@ -64,9 +65,9 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
-
     respond_to do |format|
       if @user.update_attributes(params[:user])
+        Avatar.create(:avatar => params[:avatar] , :avatar_for => @user)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else

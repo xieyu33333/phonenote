@@ -202,12 +202,15 @@ DEPENDENCIES
   bcrypt-ruby
   bootstrap-sass
   capybara
+  carrierwave
   coffee-rails (~> 3.2.1)
   factory_girl_rails
   guard-rspec
   guard-spork
   jquery-rails
   libnotify
+  mime-types
+  mini_magick
   mysql2
   rails (= 3.2.12)
   rails_kindeditor
